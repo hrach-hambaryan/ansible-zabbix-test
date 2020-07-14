@@ -28,6 +28,7 @@
           - zabbix-agent
           - zabbix-server-mysql
           - zabbix-web-mysql
+      when: '"zabbix-release" not in ansible_facts.packages'
 
     - name: Ensure a list of services  started on Zabbix-server
       service:
